@@ -3,7 +3,27 @@ name: '🔀 自定义分流规则'
 desc: |-
   https://github.com/Loyalsoldier/clash-rules
 
-rule-providers: #!replace
+rules: 
+    #校园网认证连接
+    - IP-CIDR,1.1.1.1/32,DIRECT,no-resolve
+    - RULE-SET,applications,DIRECT
+    - DOMAIN,clash.razord.top,DIRECT
+    - DOMAIN,yacd.haishan.me,DIRECT
+    - RULE-SET,private,DIRECT
+    - RULE-SET,reject,REJECT
+    - RULE-SET,icloud,DIRECT
+    - RULE-SET,apple,DIRECT
+    - RULE-SET,google,PROXY
+    - RULE-SET,proxy,PROXY
+    - RULE-SET,direct,DIRECT
+    - RULE-SET,lancidr,DIRECT
+    - RULE-SET,cncidr,DIRECT
+    - RULE-SET,telegramcidr,PROXY
+    - GEOIP,LAN,DIRECT
+    - GEOIP,CN,DIRECT
+    - MATCH,PROXY
+
+rule-providers: 
   reject:
     type: http
     behavior: domain
@@ -94,23 +114,3 @@ rule-providers: #!replace
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 86400
-
-rules: #!replace
-    #校园网认证连接
-    - IP-CIDR,1.1.1.1/32,DIRECT,no-resolve
-    - RULE-SET,applications,DIRECT
-    - DOMAIN,clash.razord.top,DIRECT
-    - DOMAIN,yacd.haishan.me,DIRECT
-    - RULE-SET,private,DIRECT
-    - RULE-SET,reject,REJECT
-    - RULE-SET,icloud,DIRECT
-    - RULE-SET,apple,DIRECT
-    - RULE-SET,google,PROXY
-    - RULE-SET,proxy,PROXY
-    - RULE-SET,direct,DIRECT
-    - RULE-SET,lancidr,DIRECT
-    - RULE-SET,cncidr,DIRECT
-    - RULE-SET,telegramcidr,PROXY
-    - GEOIP,LAN,DIRECT
-    - GEOIP,CN,DIRECT
-    - MATCH,PROXY
