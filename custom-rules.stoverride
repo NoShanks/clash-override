@@ -1,6 +1,8 @@
 name: '🔀 自定义分流规则'
+
 desc: |-
   https://github.com/Loyalsoldier/clash-rules
+
 rule-providers: #!replace
   reject:
     type: http
@@ -92,6 +94,7 @@ rule-providers: #!replace
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 86400
+
 rules: #!replace
     #校园网认证连接
     - IP-CIDR,1.1.1.1/32,DIRECT,no-resolve
