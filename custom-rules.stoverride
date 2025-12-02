@@ -3,3 +3,4 @@ name: '🔀 自定义分流规则'
 rules: 
     #校园网认证连接
     - IP-CIDR,1.1.1.1/32,DIRECT,no-resolve
+    - IP-CIDR,10.2.5.251/32,DIRECT,no-resolve
